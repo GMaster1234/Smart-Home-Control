@@ -1,0 +1,231 @@
+<html>
+<head>
+<script type="text/javascript" src="dygraph-combined.js"></script>
+</head>
+<body>
+<br>
+<br>
+<b>Temperature Sensors</b>
+<br>
+<br>
+Sensor 1 - Refrigerator 
+<br>
+<br>
+<div id="graphdiv1" style="width:90%; height:400px;"></div>
+<script type="text/javascript">
+ 
+  function addZero(num)
+  {
+    var s=num+"";
+    if (s.length < 2) s="0"+s;
+    return s;
+  }
+ 
+  function dateFormat(indate)
+  {
+    var hh = addZero(indate.getHours());
+    var MM = addZero(indate.getMinutes());
+    //var ss = addZero(indate.getSeconds());
+    var dd = addZero(indate.getDate());
+    var mm = addZero(indate.getMonth()+1);
+    var yyyy = addZero(indate.getFullYear());
+    return dd+'/'+mm+' '+hh+':'+MM;
+  }
+ 
+  g = new Dygraph(
+    document.getElementById("graphdiv1"),
+    "../disk/1.log",
+    {
+      xValueParser: function(x) {
+        var date = new Date(x.replace(
+          /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+          '$4:$5:$6 $2/$3/$1'
+        ));
+        return date.getTime();
+      },
+      axes: {
+        x: {
+          ticker: Dygraph.dateTicker,
+          axisLabelFormatter: function(x) {
+            return dateFormat(new Date(x));
+          },
+          valueFormatter: function(x) {
+            return dateFormat(new Date(x));
+          }
+        }
+      },
+      labelsDivWidth: 310,
+      rollPeriod: 0,
+      strokeWidth: 4.0,
+      labels: ['Date','Temp (F)']
+    }
+  );
+</script>
+<br>
+<br>
+Sensor 2- Freezer
+<br>
+<br>
+<div id="graphdiv2" style="width:90%; height:400px;"></div>
+<script type="text/javascript">
+ 
+  function addZero(num)
+  {
+    var s=num+"";
+    if (s.length < 2) s="0"+s;
+    return s;
+  }
+ 
+  function dateFormat(indate)
+  {
+    var hh = addZero(indate.getHours());
+    var MM = addZero(indate.getMinutes());
+    //var ss = addZero(indate.getSeconds());
+    var dd = addZero(indate.getDate());
+    var mm = addZero(indate.getMonth()+1);
+    var yyyy = addZero(indate.getFullYear());
+    return dd+'/'+mm+' '+hh+':'+MM;
+  }
+ 
+  g = new Dygraph(
+    document.getElementById("graphdiv2"),
+    "../disk/FreezeF.log",
+    {
+      xValueParser: function(x) {
+        var date = new Date(x.replace(
+          /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+          '$4:$5:$6 $2/$3/$1'
+        ));
+        return date.getTime();
+      },
+      axes: {
+        x: {
+          ticker: Dygraph.dateTicker,
+          axisLabelFormatter: function(x) {
+            return dateFormat(new Date(x));
+          },
+          valueFormatter: function(x) {
+            return dateFormat(new Date(x));
+          }
+        }
+      },
+      labelsDivWidth: 310,
+      rollPeriod: 0,
+      strokeWidth: 4.0,
+      labels: ['Date','Temp (F)']
+    }
+  );
+</script>
+<br>
+<br>
+Sensor 3 - Outside
+<br>
+<br>
+<div id="graphdiv3" style="width:90%; height:400px;"></div>
+<script type="text/javascript">
+ 
+  function addZero(num)
+  {
+    var s=num+"";
+    if (s.length < 2) s="0"+s;
+    return s;
+  }
+ 
+  function dateFormat(indate)
+  {
+    var hh = addZero(indate.getHours());
+    var MM = addZero(indate.getMinutes());
+    //var ss = addZero(indate.getSeconds());
+    var dd = addZero(indate.getDate());
+    var mm = addZero(indate.getMonth()+1);
+    var yyyy = addZero(indate.getFullYear());
+    return dd+'/'+mm+' '+hh+':'+MM;
+  }
+ 
+  g = new Dygraph(
+    document.getElementById("graphdiv3"),
+    "../disk/2.log",
+    {
+      xValueParser: function(x) {
+        var date = new Date(x.replace(
+          /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+          '$4:$5:$6 $2/$3/$1'
+        ));
+        return date.getTime();
+      },
+      axes: {
+        x: {
+          ticker: Dygraph.dateTicker,
+          axisLabelFormatter: function(x) {
+            return dateFormat(new Date(x));
+          },
+          valueFormatter: function(x) {
+            return dateFormat(new Date(x));
+          }
+        }
+      },
+      labelsDivWidth: 310,
+      rollPeriod: 0,
+      strokeWidth: 4.0,
+      labels: ['Date','Temp (F)']
+    }
+  );
+</script>
+<br>
+<br>
+Sensor 4 - Living Room
+<br>
+<br>
+<div id="graphdiv4" style="width:90%; height:400px;"></div>
+<script type="text/javascript">
+ 
+  function addZero(num)
+  {
+    var s=num+"";
+    if (s.length < 2) s="0"+s;
+    return s;
+  }
+ 
+  function dateFormat(indate)
+  {
+    var hh = addZero(indate.getHours());
+    var MM = addZero(indate.getMinutes());
+    //var ss = addZero(indate.getSeconds());
+    var dd = addZero(indate.getDate());
+    var mm = addZero(indate.getMonth()+1);
+    var yyyy = addZero(indate.getFullYear());
+    return dd+'/'+mm+' '+hh+':'+MM;
+  }
+ 
+  g = new Dygraph(
+    document.getElementById("graphdiv4"),
+    "../disk/3.log",
+    {
+      xValueParser: function(x) {
+        var date = new Date(x.replace(
+          /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+          '$4:$5:$6 $2/$3/$1'
+        ));
+        return date.getTime();
+      },
+      axes: {
+        x: {
+          ticker: Dygraph.dateTicker,
+          axisLabelFormatter: function(x) {
+            return dateFormat(new Date(x));
+          },
+          valueFormatter: function(x) {
+            return dateFormat(new Date(x));
+          }
+        }
+      },
+      labelsDivWidth: 310,
+      rollPeriod: 0,
+      strokeWidth: 4.0,
+      labels: ['Date','Temp (F)']
+    }
+  );
+</script>
+
+</body>
+</html>
